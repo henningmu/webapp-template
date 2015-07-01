@@ -1,0 +1,17 @@
+@import "variables";
+
+// Default font
+@mixin typeface {
+    font-family: $font-roboto;
+}
+
+// Invisible before element to center other elements
+@mixin pseudo-to-center {
+  &:before {
+    content: '';
+    display: inline-block;
+    vertical-align: middle;
+    height: 100%;
+    margin-right: -0.25em;
+  }
+}
