@@ -1,9 +1,0 @@
-// Basic imports
-@import "base/normalize";
-@import "base/base";
-
-// Module imports
-
-body {
-    @include typeface;
-}

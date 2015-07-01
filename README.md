@@ -1,13 +1,50 @@
-# Description #
-Very basic website template. Just includes Compass and SASS as well as file structure.
+WebApp Template
+===================
 
-## How to Use ##
-All Compass and SASS related files are in the /css/sass folder.
-The config file is set up to be ready to go. For your edits in /css/sass/ css to be compiled automatically, run the watcher command `compass watch` within the root folder. Then all your changes in the SASS (.scss) files will be compiled into the /css folder.
+Basic web app template / skeleton as a starter for new projects. Can be used to build SPAs.
 
-## References and Inspiration from ##
-* <a href="http://compass-style.org/">Compass Framework</a>
-* <a href="http://sass-lang.com/">SASS</a>
-* <a href="http://necolas.github.com/normalize.css/">normalize.css</a>
-* <a href="https://github.com/xtine/compass-sass-html5boilerplate">xtine's setup</a>
-* <a href="https://github.com/leemunroe/motherplate">Motherplate</a>
+Includes AngularJS, SASS, jQuery and gives you a basic folder structure to start with.
+
+Inspired to follow <a href="https://github.com/johnpapa/angular-styleguide">John Papa's Angular Style Guide</a>
+
+## Installation
+ - install nodejs (in order to get npm)
+ - run the following
+```
+npm install -g bower
+npm install -g gulp
+```
+ - load all node_modules via:
+```
+npm install
+```
+ - load all bower_components via:
+```
+bower install
+```
+ - build and set up everything by running:
+```
+gulp
+```
+
+## Execution
+
+When python is installed open a terminal in the root directory of the project. Run the following command to start a simple HTTP server:
+
+```
+python -m SimpleHTTPServer
+```
+or with python3:
+```
+python -m http.server
+```
+
+After that you can access the web app template on ```localhost:8000/app```
+
+## Developing
+
+You can enable the watcher to monitor your scss files and compile them automatically into css by running:
+
+```
+gulp watch
+```
