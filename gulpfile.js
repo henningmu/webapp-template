@@ -3,14 +3,10 @@ var gulp = require('gulp');
 var bower = require('gulp-bower');
 var sass = require('gulp-ruby-sass');
 var inject = require('gulp-inject');
-var merge = require('merge-stream');
 var config = require('./gulp.config.json');
 
 var sassLoadPaths = [
-    config.sassPath,
-    config.bowerDir + "/fontawesome/scss",
-    config.bowerDir + "/mdi/scss",
-    config.bowerDir + "/materialize/sass"
+    config.sassPath
 ];
 
 /** ====================
@@ -22,21 +18,6 @@ var sassLoadPaths = [
 gulp.task('bower', function () {
     return bower()
         .pipe(gulp.dest(config.bowerDir))
-});
-
-/**
- * Copies the fonts into the assets directory
- * */
-gulp.task('fonts', function () {
-    var fonts = gulp.src(config.bowerDir + '/fontawesome/fonts/**.*')
-        .pipe(gulp.src(config.bowerDir + '/mdi/fonts/**.*'))
-        .pipe(gulp.dest('./assets/fonts'));
-    var roboto = gulp.src(config.bowerDir + '/materialize/font/roboto/**.*')
-        .pipe(gulp.dest('./assets/font/roboto'));
-    var mdi = gulp.src(config.bowerDir + '/materialize/font/material-design-icons/**.*')
-        .pipe(gulp.dest('./assets/font/material-design-icons'));
-
-    return merge(fonts, roboto).add(mdi);
 });
 
 /**
@@ -72,5 +53,5 @@ gulp.task('watch', function () {
 /** ===============
  *  Default Task
  * =============== */
-gulp.task('default', ['bower', 'fonts', 'css', 'index']);
+gulp.task('default', ['bower', 'css', 'index']);
 
